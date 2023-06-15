@@ -1,0 +1,38 @@
+{% load static %}
+
+<!-- ring section -->
+
+<section class="ring_section layout_padding">
+    <div class="design-box">
+        <img src="{% static 'images/design-1.png' %}" alt="">
+    </div>
+    {% for special in specials %}
+    <div class="container">
+        <div class="ring_container layout_padding2">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="detail-box">
+                        <h4>
+                            special
+                        </h4>
+                        <h2>
+                            {{ special.special_title }}
+                        </h2>
+                        <a href="">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="img-box">
+                        <img src="{{ special.special_image.url }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+
+<!-- end ring section -->

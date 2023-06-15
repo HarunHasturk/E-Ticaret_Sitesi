@@ -1,0 +1,29 @@
+{% load static %}
+
+<!-- item section -->
+
+<div class="item_section layout_padding2">
+    <div class="container">
+        <div class="item_container">
+            {% for bestprice in bestprices %}
+                <div class="box">
+                    <div class="price">
+                        <h6>
+                            {{ bestprice.price_assessment }}
+                        </h6>
+                    </div>
+                    <div class="img-box">
+                        <img src="{{ bestprice.price_image.url }}" alt="">
+                    </div>
+                    <div class="name">
+                        <h5>
+                            {{ bestprice.price_name }}
+                        </h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- end item section -->

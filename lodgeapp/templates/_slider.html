@@ -1,0 +1,77 @@
+{% load static %}
+
+<!-- slider section -->
+<section class=" slider_section position-relative">
+    <div class="design-box">
+        <img src="{% static 'images/design-1.png' %}" alt="">
+    </div>
+    <div class="slider_number-container d-none d-md-block">
+        <div class="number-box">
+            <span>
+                01
+            </span>
+            <hr>
+            <span class="jwel">
+                J <br>
+                e <br>
+                w <br>
+                e <br>
+                l <br>
+                l <br>
+                e <br>
+                r <br>
+                y
+            </span>
+            <hr>
+            <span>
+                02
+            </span>
+        </div>
+    </div>
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3">04</li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4">05</li>
+            </ol>
+            <div class="carousel-inner">
+                {% for slider in sliders %}
+                    <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail_box">
+                                    <h2>
+                                        <span>{{ slider.slider_collection }}</span>
+                                        <hr>
+                                    </h2>
+                                    <h1>
+                                        {{ slider.slider_title }}
+                                    </h1>
+                                    <p>
+                                        {{ slider.slider_content }}
+                                    </p>
+                                    <div>
+                                        <a href="{% url 'jewellery' %}">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="img-box">
+                                    <img src="{{ slider.slider_image.url }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    
+
+</section>
+<!-- end slider section -->
+</div>
